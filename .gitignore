@@ -1,0 +1,15 @@
+# data
+data/images/
+data/labels/
+
+# pth
+pths/
+
+# tmp
+tmp/
+
+# cache
+*.cache
+
+# __pycache__
+__pycache__/
