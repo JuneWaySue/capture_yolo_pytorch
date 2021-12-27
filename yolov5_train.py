@@ -208,7 +208,7 @@ def train():
         scheduler.step()
 
         if (epoch % evaluation_interval == 0) or (epoch+1 == epochs):
-            save_dir=Path(f'{epoch}')
+            save_dir=Path(f'plots/{epoch}')
             save_dir.mkdir(parents=True, exist_ok=True)
             results, maps, _ = valid_model(model,valid_loader,conf_thres=0.5,iou_thres=0.5,verbose=True,save_dir=save_dir,compute_loss=compute_loss)
             val_loss.append(dict(zip(['box loss', 'obj loss', 'cls loss'],results[4:])))
