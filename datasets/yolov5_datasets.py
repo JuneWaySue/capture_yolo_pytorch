@@ -93,7 +93,6 @@ class LoadImagesAndLabels(Dataset):
 
         # Check cache
         self.label_files = [i.replace('images','labels').replace('png','txt') for i in self.img_files]
-        cache_path = Path('train_labels.cache') if self.is_train else Path('vaild_labels.cache')
         try:
             cache, exists = np.load(cache_path, allow_pickle=True).item(), True  # load dict
             assert cache['version'] == self.cache_version  # same version
